@@ -135,19 +135,15 @@ export default function GameDetails() {
   // Handle play button click
   const handlePlay = () => {
     if (isPlaying) {
-      // End game (in a real app, this would calculate score based on gameplay)
+      // End game
       setIsPlaying(false);
       
-      // Generate a random score for this demo
-      const randomScore = Math.floor(Math.random() * 5000) + 500;
-      setScore(randomScore);
-      
-      // Record play session
+      // Record play session with current score
       playMutation.mutate();
       
       toast({
         title: "Game completed",
-        description: `You scored ${randomScore} points!`
+        description: `You scored ${score} points!`
       });
     } else {
       // Start game
@@ -158,6 +154,23 @@ export default function GameDetails() {
       playMutation.mutate();
     }
   };
+  
+  // Handle messages from game iframe
+  useEffect(() => {
+    const handleGameMessage = (event: MessageEvent) => {
+      // Make sure the message is from our game
+      if (event.data && typeof event.data === 'object' && event.data.type === 'gameScore') {
+        // Update score from game
+        setScore(event.data.score);
+      }
+    };
+    
+    window.addEventListener('message', handleGameMessage);
+    
+    return () => {
+      window.removeEventListener('message', handleGameMessage);
+    };
+  }, []);
 
   // Handle comment submission
   const handleCommentSubmit = (e: React.FormEvent) => {
@@ -246,15 +259,23 @@ export default function GameDetails() {
                     className="w-full aspect-video object-cover"
                   />
                   {isPlaying ? (
-                    <div className="absolute inset-0 bg-black/80 flex flex-col items-center justify-center text-white">
-                      <div className="text-2xl font-bold mb-4">Game in Progress</div>
-                      <p className="mb-6">Score: {score}</p>
-                      <Button 
-                        onClick={handlePlay}
-                        variant="destructive"
-                      >
-                        End Game
-                      </Button>
+                    <div className="absolute inset-0 flex flex-col items-center bg-black">
+                      <div className="flex justify-between items-center w-full p-2 bg-gray-800">
+                        <div className="text-white font-bold">Score: {score}</div>
+                        <Button 
+                          onClick={handlePlay}
+                          variant="destructive"
+                          size="sm"
+                        >
+                          End Game
+                        </Button>
+                      </div>
+                      <iframe 
+                        src={`/games/${game?.title.toLowerCase().replace(/\s+/g, '-')}/index.html`}
+                        className="w-full h-full border-0"
+                        title={game?.title}
+                        sandbox="allow-scripts allow-same-origin"
+                      />
                     </div>
                   ) : (
                     <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
@@ -303,11 +324,11 @@ export default function GameDetails() {
                     <div className="flex flex-wrap gap-6 text-sm text-gray-600 dark:text-gray-400">
                       <div className="flex items-center">
                         <Users className="mr-2 h-4 w-4" />
-                        <span>{game?.playCount.toLocaleString()} plays</span>
+                        <span>{game?.playCount ? game.playCount.toLocaleString() : 0} plays</span>
                       </div>
                       <div className="flex items-center">
                         <Star className="mr-2 h-4 w-4 text-yellow-500 fill-yellow-500" />
-                        <span>{game?.rating} / 5 rating</span>
+                        <span>{game?.rating ?? 0} / 5 rating</span>
                       </div>
                       <div className="flex items-center">
                         <Clock className="mr-2 h-4 w-4" />

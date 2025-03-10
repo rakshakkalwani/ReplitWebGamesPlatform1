@@ -136,6 +136,13 @@ function endGame() {
       console.log('Error stopping engine sound', e);
     }
   }
+  
+  // Send final score to parent window
+  try {
+    window.parent.postMessage({ type: 'gameScore', score: score, final: true }, '*');
+  } catch (e) {
+    // Ignore errors when running standalone
+  }
 }
 
 function gameLoop(timestamp) {
@@ -172,6 +179,13 @@ function updateGame(deltaTime) {
   // Update distance and score
   distance += speed * deltaTime;
   score = Math.floor(distance / 10);
+  
+  // Send score to parent window
+  try {
+    window.parent.postMessage({ type: 'gameScore', score: score }, '*');
+  } catch (e) {
+    // Ignore errors when running standalone
+  }
   
   // Keep car within road boundaries
   playerCar.x = Math.max(ROAD_MARGIN, Math.min(canvas.width - ROAD_MARGIN - CAR_WIDTH, playerCar.x));
