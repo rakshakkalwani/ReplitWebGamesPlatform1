@@ -4,8 +4,13 @@ import { storage } from "./storage";
 import { insertUserSchema, insertCommentSchema, insertRatingSchema, insertGameHistorySchema } from "@shared/schema";
 import { ZodError } from "zod";
 import { fromZodError } from "zod-validation-error";
+import path from "path";
+import express from "express";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Serve game files from the public directory
+  app.use('/games', express.static(path.join(process.cwd(), 'public', 'games')));
+  
   // Error handler middleware for zod validation errors
   const handleZodError = (err: unknown, res: Response) => {
     if (err instanceof ZodError) {
