@@ -38,6 +38,9 @@ let nextObstacleSpawn = 0;
 let lastTimestamp = 0;
 let gameTimeInterval;
 
+// Sound engine
+let engineSound = null;
+
 // Player car
 const playerCar = {
   x: canvas.width / 2 - CAR_WIDTH / 2,
@@ -96,6 +99,18 @@ function startGame() {
   uiLayer.classList.remove('hidden');
   updateUI();
   
+  // Initialize and start engine sound
+  if (!engineSound) {
+    engineSound = new EngineSound();
+    engineSound.init();
+  }
+  
+  try {
+    engineSound.start();
+  } catch (e) {
+    console.log('Audio not supported or user has not interacted with the page yet');
+  }
+  
   // Start game timer
   gameTimeInterval = setInterval(() => {
     gameTime++;
@@ -112,6 +127,15 @@ function endGame() {
   clearInterval(gameTimeInterval);
   finalScoreElement.textContent = score;
   gameOverScreen.classList.remove('hidden');
+  
+  // Stop engine sound
+  if (engineSound) {
+    try {
+      engineSound.stop();
+    } catch (e) {
+      console.log('Error stopping engine sound', e);
+    }
+  }
 }
 
 function gameLoop(timestamp) {
@@ -175,6 +199,15 @@ function updateGame(deltaTime) {
     if (checkCollision(playerCar, obstacle)) {
       endGame();
       return;
+    }
+  }
+  
+  // Update engine sound
+  if (engineSound) {
+    try {
+      engineSound.updateSpeed(speed);
+    } catch (e) {
+      // Ignore audio errors
     }
   }
   
