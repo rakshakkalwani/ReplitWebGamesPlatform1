@@ -271,10 +271,12 @@ export default function GameDetails() {
                         </Button>
                       </div>
                       <iframe 
-                        src={`/games/${game?.title.toLowerCase().replace(/\s+/g, '-')}/index.html`}
+                        src={game?.title.toLowerCase() === "battle royale" 
+                          ? "/games/testgame/index.html" 
+                          : `/games/${game?.title.toLowerCase().replace(/\s+/g, '-')}/index.html`}
                         className="w-full h-full border-0"
                         title={game?.title}
-                        sandbox="allow-scripts allow-same-origin"
+                        sandbox="allow-scripts allow-same-origin allow-popups"
                       />
                     </div>
                   ) : (

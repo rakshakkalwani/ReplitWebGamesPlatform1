@@ -270,12 +270,12 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Battle Royale",
-        description: "Compete with friends in this multiplayer arena",
-        category: "multiplayer",
-        secondaryCategory: "action",
+        description: "Compete in this intense connection-based battle game",
+        category: "strategy",
+        secondaryCategory: "multiplayer",
         thumbnailUrl: "https://images.unsplash.com/photo-1517957754642-2870518e16f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=170&q=80",
         isFeatured: true,
-        isNew: false,
+        isNew: true,
         rating: 5,
         playCount: 4567
       },
