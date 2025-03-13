@@ -24,6 +24,31 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Badge } from "@/components/ui/badge";
 
+// Helper function to determine game path based on the game title
+const getGamePath = (gameTitle?: string): string => {
+  if (!gameTitle) return '';
+  
+  // Special case for Battle Royale (testgame)
+  if (gameTitle.toLowerCase() === "battle royale") {
+    return "/games/testgame/index.html";
+  }
+  
+  // Special case for Speed Racer
+  if (gameTitle.toLowerCase() === "speed racer") {
+    return "/games/speed-racer/index.html";
+  }
+  
+  // For the folder name, replace spaces with hyphens or underscores
+  // This makes the folder name match the game title format in the file system
+  const folderName = gameTitle
+    .replace(/\s+/g, '') // Remove spaces for AlphaBalls style
+    .replace(/([A-Z])/g, '$1') // Keep camelCase
+    .replace(/\d+/g, '$&'); // Keep numbers
+  
+  // Try HTML5 subfolder first (for newer games)
+  return `/games/${folderName}/HTML5/index.html`;
+};
+
 export default function GameDetails() {
   const { id } = useParams<{ id: string }>();
   const gameId = parseInt(id);
@@ -271,14 +296,10 @@ export default function GameDetails() {
                         </Button>
                       </div>
                       <iframe 
-                        src={game?.title.toLowerCase() === "battle royale" 
-                          ? "/games/testgame/index.html" 
-                          : game?.title.toLowerCase() === "speed racer"
-                            ? `/games/speed-racer/index.html`
-                            : `/games/${game?.title}/HTML5/index.html`}
+                        src={getGamePath(game?.title)}
                         className="w-full h-full border-0"
                         title={game?.title}
-                        sandbox="allow-scripts allow-same-origin allow-popups"
+                        sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
                       />
                     </div>
                   ) : (
