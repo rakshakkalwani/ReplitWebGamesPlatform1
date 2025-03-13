@@ -273,9 +273,9 @@ export default function GameDetails() {
                       <iframe 
                         src={game?.title.toLowerCase() === "battle royale" 
                           ? "/games/testgame/index.html" 
-                          : game?.title.toLowerCase() === "alphaballs" || game?.title.toLowerCase() === "basketslide"
-                            ? `/games/${game?.title}/html5/index.html`
-                            : `/games/${game?.title.toLowerCase().replace(/\s+/g, '-')}/index.html`}
+                          : game?.title.toLowerCase() === "speed racer"
+                            ? `/games/speed-racer/index.html`
+                            : `/games/${game?.title}/HTML5/index.html`}
                         className="w-full h-full border-0"
                         title={game?.title}
                         sandbox="allow-scripts allow-same-origin allow-popups"
