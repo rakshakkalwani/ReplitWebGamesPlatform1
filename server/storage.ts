@@ -343,6 +343,28 @@ export class MemStorage implements IStorage {
         isNew: true,
         rating: 4,
         playCount: 1879
+      },
+      {
+        title: "AlphaBalls",
+        description: "Roll, bounce and navigate through challenging levels with colorful balls",
+        category: "puzzle",
+        secondaryCategory: "arcade",
+        thumbnailUrl: "/games/AlphaBalls/html5/icons/icon-512.png",
+        isFeatured: true,
+        isNew: true,
+        rating: 4.5,
+        playCount: 1243
+      },
+      {
+        title: "BasketSlide",
+        description: "Slide and shoot your way to basketball glory in this addictive sports game",
+        category: "action",
+        secondaryCategory: "arcade",
+        thumbnailUrl: "/games/BasketSlide/html5/icons/icon-512.png",
+        isFeatured: false,
+        isNew: true,
+        rating: 4.2,
+        playCount: 987
       }
     ];
     
