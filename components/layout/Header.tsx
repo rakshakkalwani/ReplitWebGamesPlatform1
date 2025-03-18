@@ -52,14 +52,16 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
-              <Link key={link.path} href={link.path}>
-                <a className={`font-medium transition ${
+              <Link 
+                key={link.path} 
+                href={link.path}
+                className={`font-medium transition ${
                   isActive(link.path) 
                     ? "text-gray-800 dark:text-white" 
                     : "text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400"
-                }`}>
-                  {link.label}
-                </a>
+                }`}
+              >
+                {link.label}
               </Link>
             ))}
           </nav>
@@ -126,17 +128,17 @@ export default function Header() {
           <div className="md:hidden pb-4">
             <div className="flex flex-col space-y-3">
               {navLinks.map((link) => (
-                <Link key={link.path} href={link.path}>
-                  <a 
-                    className={`py-2 px-3 rounded-md font-medium ${
-                      isActive(link.path)
-                        ? "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white"
-                        : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    }`}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {link.label}
-                  </a>
+                <Link 
+                  key={link.path} 
+                  href={link.path}
+                  className={`py-2 px-3 rounded-md font-medium ${
+                    isActive(link.path)
+                      ? "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white"
+                      : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.label}
                 </Link>
               ))}
             </div>
