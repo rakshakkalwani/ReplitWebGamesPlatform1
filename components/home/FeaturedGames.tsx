@@ -35,8 +35,11 @@ export default function FeaturedGames() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold">Featured Games</h2>
-          <Link href="/games">
-            <a className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">View All</a>
+          <Link 
+            href="/games"
+            className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium"
+          >
+            View All
           </Link>
         </div>
         

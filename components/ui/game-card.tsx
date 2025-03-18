@@ -58,10 +58,11 @@ export function GameCard({ game, featured = false }: GameCardProps) {
             <span className="text-xs font-medium px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded capitalize">
               {category}
             </span>
-            <Link href={`/games/${id}`}>
-              <button className="text-indigo-600 dark:text-indigo-400 font-medium hover:underline text-sm">
-                Play Now
-              </button>
+            <Link 
+              href={`/games/${id}`}
+              className="text-indigo-600 dark:text-indigo-400 font-medium hover:underline text-sm"
+            >
+              Play Now
             </Link>
           </div>
         </CardContent>
