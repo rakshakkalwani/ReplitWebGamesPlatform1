@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Game } from "@shared/schema";
-import GameCard from "@/components/ui/game-card";
-import { Button } from "@/components/ui/button";
+import { GameCard } from "../ui/game-card";
+import { Button } from "../ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "../ui/skeleton";
 
 export default function FeaturedGames() {
   const { data: games, isLoading } = useQuery<Game[]>({
@@ -35,8 +35,11 @@ export default function FeaturedGames() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold">Featured Games</h2>
-          <Link href="/games">
-            <a className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">View All</a>
+          <Link 
+            href="/games"
+            className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium"
+          >
+            View All
           </Link>
         </div>
         

@@ -35,11 +35,11 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4">Games</h3>
             <ul className="space-y-2">
-              <li><Link href="/games?category=arcade"><a className="hover:text-white transition">Arcade</a></Link></li>
-              <li><Link href="/games?category=puzzle"><a className="hover:text-white transition">Puzzle</a></Link></li>
-              <li><Link href="/games?category=action"><a className="hover:text-white transition">Action</a></Link></li>
-              <li><Link href="/games?category=adventure"><a className="hover:text-white transition">Adventure</a></Link></li>
-              <li><Link href="/games?category=multiplayer"><a className="hover:text-white transition">Multiplayer</a></Link></li>
+              <li><Link href="/games?category=arcade" className="hover:text-white transition">Arcade</Link></li>
+              <li><Link href="/games?category=puzzle" className="hover:text-white transition">Puzzle</Link></li>
+              <li><Link href="/games?category=action" className="hover:text-white transition">Action</Link></li>
+              <li><Link href="/games?category=adventure" className="hover:text-white transition">Adventure</Link></li>
+              <li><Link href="/games?category=multiplayer" className="hover:text-white transition">Multiplayer</Link></li>
             </ul>
           </div>
           

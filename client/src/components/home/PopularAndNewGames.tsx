@@ -3,7 +3,7 @@ import { Game } from "@shared/schema";
 import { Link } from "wouter";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "../../components/ui/skeleton";
 
 export default function PopularAndNewGames() {
   const { data: popularGames, isLoading: popularLoading } = useQuery<Game[]>({
@@ -95,7 +95,7 @@ export default function PopularAndNewGames() {
                       </div>
                       <div className="flex items-center justify-between mt-2">
                         <span className="text-xs text-gray-500 dark:text-gray-400">
-                          {(game.playCount / 1000).toFixed(1)}K+ players
+                          {((game.playCount || 0) / 1000).toFixed(1)}K+ players
                         </span>
                         <Link href={`/games/${game.id}`}>
                           <button className="text-indigo-600 dark:text-indigo-400 text-sm font-medium">

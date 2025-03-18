@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import CategoryCard from "@/components/ui/category-card";
+import { CategoryCard } from "../ui/category-card";
 import { gameCategories, GameCategory } from "@shared/schema";
 import { motion } from "framer-motion";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "../ui/skeleton";
 
 export default function Categories() {
   // For this demo, we're using the predefined categories from schema

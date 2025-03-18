@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { useAuth } from "@/context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 import { useState } from "react";
-import LoginModal from "@/components/modals/LoginModal";
+import LoginModal from "../../components/modals/LoginModal";
 
 export default function CTA() {
   const { isAuthenticated } = useAuth();

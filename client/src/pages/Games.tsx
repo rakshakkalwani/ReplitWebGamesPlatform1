@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useLocation } from "wouter";
-import { Game, gameCategories } from "@shared/schema";
-import GameCard from "@/components/ui/game-card";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Input } from "@/components/ui/input";
+import { Game, gameCategories } from "../../../shared/schema";
+import GameCard from "../components/ui/game-card";
+import { Tabs, TabsList, TabsTrigger } from "../components/ui/tabs";
+import { Input } from "../components/ui/input";
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "../components/ui/skeleton";
 
 export default function Games() {
   const [location] = useLocation();

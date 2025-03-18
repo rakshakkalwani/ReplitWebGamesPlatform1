@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { User } from "@shared/schema";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "../ui/skeleton";
 
 const colors = [
   "text-indigo-600 dark:text-indigo-400",
@@ -107,7 +107,7 @@ export default function Leaderboard() {
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm text-gray-900 dark:text-gray-100 font-semibold">
-                          {player.points.toLocaleString()}
+                          {player.points?.toLocaleString() || '0'}
                         </div>
                       </td>
                     </tr>

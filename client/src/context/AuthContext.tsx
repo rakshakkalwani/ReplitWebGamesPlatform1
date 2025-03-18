@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, ReactNode, useEffect } from "react";
-import { User } from "@shared/schema";
-import { useToast } from "@/hooks/use-toast";
+import { User } from "../../../shared/schema";
+import { useToast } from "../hooks/use-toast";
 
 interface AuthContextType {
   user: User | null;

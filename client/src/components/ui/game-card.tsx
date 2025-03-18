@@ -1,5 +1,5 @@
 import { Game } from "@shared/schema";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "./card";
 import { Star } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
