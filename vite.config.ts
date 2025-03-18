@@ -1,4 +1,3 @@
-
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import themePlugin from "@replit/vite-plugin-shadcn-theme-json";
@@ -25,17 +24,13 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname),
+      "@": path.resolve(__dirname, "."),
       "@shared": path.resolve(__dirname, "shared"),
     },
   },
-  server: {
-    host: '0.0.0.0',
-    port: 3000,
-    hmr: true
-  },
+  root: path.resolve(__dirname),
   build: {
-    outDir: path.resolve(__dirname, "dist"),
+    outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
   },
 });
