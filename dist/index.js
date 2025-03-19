@@ -1511,7 +1511,7 @@ app.use((req, res, next) => {
   } else {
     serveStatic(app);
   }
-  const port = 5e3;
+  const port = process.env.PORT || 5001; // Use PORT env variable or 5001 as fallback
   server.listen({
     port,
     host: "0.0.0.0",
