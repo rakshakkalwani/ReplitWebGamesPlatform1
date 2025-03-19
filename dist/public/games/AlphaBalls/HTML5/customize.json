@@ -1,0 +1,219 @@
+{
+	
+	"MaxExtraWords" : 0,
+	"AddToMaxExtraWords" : 5,
+	"FlashingTime" : "10-20",
+	"EndExtraWords" : 30,
+	"StartCoins" : 50,
+
+	"Balls" : 
+	{
+		"Gravity": 25,
+		"LinearDamping": 0.2,
+		"Density": 5,
+		"Size": 160
+		
+	},
+	
+	"ItemsPrice":
+	{
+		"Hint" : 50,	
+		"Bin" : 25
+	},
+	
+	"LetterSpot" : 
+	{
+		"Size" : 70,
+		"StartX" : 0,
+		"StartY" : 350,
+		"SpcBetweenLetters" : 65,
+		"SpcBetweenWords" : 120,
+		"SpcBetweenLines" : 100
+	},
+	
+	"ExtraWords" : 
+	{
+		"Size" : 70,
+		"DistX" : 30,
+		"DistY" : 200,
+		"SpcBetweenWords" : 70,
+		"SpcBetweenLines" : 115,
+		"ExtraBgSpc" : 10
+	},
+	
+	"DailyGift" :
+	{
+		"1" : ["coin-10" , "bin-1" , "hint-1" ],
+		"2" : ["coin-20" , "hint-2"],
+		"3" : ["coin-100" , "hint-1" , "bin-2"],
+		"4" : ["coin-150" ],
+		"5" : ["coin-90" , "bin-1"],
+		"6" : ["bin-5" ],
+		"7" : ["coin-150" , "bin-3" , "hint-3"],
+		"8" : ["hint-5" ],
+		"9" : ["bin-1" , "hint-2"]
+	},
+	
+
+	"MysteryGift" : 
+	{
+		"1" : ["coin-500" , "hint-4"],
+		"2" : ["coin-200" , "bin-4"],
+		"3" : ["coin-220" , "hint-4"],
+		"4" : ["bit-5" , "hint-5"],
+		"5" : ["coin-300" , "bin-4"],
+		"6" : ["bin-10" , "hint-4"],
+		"7" : ["coin-300" , "hint-5"],
+		"8" : ["coin-250" , "hint-4"],
+		"9" : ["coin-400" , "bin-5"]
+	},
+	
+	
+	"Dic" :
+	{
+		"1" : ["coin-50" , "bin-1" , "hint-1" ],
+		"2" : ["coin-100" , "hint-2"],
+		"3" : ["coin-100" , "hint-1" , "bin-2"],
+		"4" : ["coin-150" ],
+		"5" : ["coin-100" , "bin-3"],
+		"6" : ["bin-5" , "coin-150" ],
+		"7" : ["coin-150" , "bin-3" , "hint-3"],
+		"8" : ["hint-5"  , "coin-50"],
+		"9" :  ["hint-3" , "bin-5" ], 
+		"10" : ["hint-5"  , "coin-100" , "bin-2"],
+		"11" : ["coin-90" , "bin-1"],
+		"12" : ["coin-100" , "hint-3" , "bin-2"],
+		"13" : ["coin-200" ],
+		"14" : ["coin-150" , "hint-4"],
+		"15" :["coin-300" , "bin-3" , "hint-2"],
+		"16" :["coin-300" , "bin-3" , "hint-2"],
+		"17" :["coin-300" , "bin-3" , "hint-2"],
+		"18" :["coin-300" , "bin-3" , "hint-2"],
+		"19" :["coin-300" , "bin-3" , "hint-2"],
+		"20" :["coin-300" , "bin-3" , "hint-2"],
+		"21" :["coin-300" , "bin-3" , "hint-2"]
+		
+		
+	},	
+	
+	
+	"Words" :
+	{
+		"Part_1" :
+		{
+			"CatTitle"		: "Art, Sport &\nCelebrities",
+			"MysteryWord"		: "Ramin Djawadi",
+			"MysteryWordDetails"		: "An elite in music. we owe him for his best soundtracks in many movies, tv series and video games.",
+			"CatUnlockPrice"		: 0,
+			
+			"Lv_1" 	: ["Soccer Players" 			, ",Messi,Ronaldo,Neymar,Xavi,Salah,Kane,Buffon,Neuer," 								, "zrx"			,"D" ,7],
+			"Lv_2" 	: ["Pop Singers" 				, ",Beyonce,LadyGaga,Rihanna,Adele,Selena,Madonna," 										, "ken"			,"N" ,5],
+			"Lv_3" 	: ["Sports" 					, ",Soccer,Basketball,Tennis,Hockey,Volleyball,Cricket,Baseball,"						, "buq"			,"R" ,1],
+			"Lv_4" 	: ["Music Genres" 				, ",Rock,Pop,HipHop,Jazz,Country,Blues,Soul,HeavyMetal,Funk,"							, "fkgr"		,"I" ,4],
+			"Lv_5" 	: ["FIFA Word Cup Hosts" 		, ",Russia,Italy,Spain,Mexico,Germany,Brazil,France,Argentina,"							, "tcsx"		,"M" ,3],
+			"Lv_6" 	: ["TV Series" 					, ",Lost,Shameless,Chernobyl,Friends,BreakingBad,TrueDetective,"						, "fgjh"		,"A" ,2],
+			"Lv_7" 	: ["Musical Instruments" 		, ",Guitar,Piano,Violin,Saxophone,Drums,Cello,Flute,"									, "dmus"		,"A" ,11],
+			"Lv_8" 	: ["Oscar Winning Movies" 		, ",Joker,GreenBook,Parasite,Artist,Titanic,Godfather,"									, "hfdtt"		,"J" ,8],
+			"Lv_9" 	: ["Movie Genres" 				, ",Horror,Comedy,Drama,Animation,Crime,Western,"										, "etyui"		,"W" ,10],
+			"Lv_10" : ["Athletes (Not Soccer)" 		, ",Jordan,Federer,Woods,James,Williams,Nadal,"											, "ervsd"		,"D" ,12],
+			"Lv_11" : ["Directors" 					, ",Nolan,Scorsese,Cameron,Tarantino,Hitchcock,Spielberg,"								, "sgrnh"		,"I" ,13],
+			"Lv_12" : ["Oscars Winning Actors" 		, ",Dicaprio,Hanks,Pitt,Brando,Pacino,Hopkins,Deniro,"									, "aeegh"		,"A" ,9]
+		},
+		
+		"Part_2" :
+		{
+			"CatTitle"		: "Objects & Tools",
+			"MysteryWord"		: "Telegraph",
+			"MysteryWordDetails"		: "The starting point of the communication between humans. it is the grandfather of messengers.",
+			"CatUnlockPrice"		: 100,
+			
+			"Lv_1" 	: ["Computer Accessories" 		, ",Mouse,Keyboard,Monitor,Webcam,Speaker,Headphone,"									, "fjf"			,"R" ,6],
+			"Lv_2" 	: ["Objects in School" 			, ",Pen,Pencil,Notebook,Book,Desk,Blackboard,Ruler,"									, "dfg"			,"T" ,1],
+			"Lv_3" 	: ["Gaming Consoles" 			, ",PlayStation,Atari,Sega,XBox,Nintendo,"												, "ehx"			,"G" ,5],
+			"Lv_4" 	: ["Kitchen Appliances" 		, ",Fork,Spoon,Knife,Dish,Pot,Oven,Sink,Grater,"										, "ngny"		,"E" ,2],
+			"Lv_5" 	: ["Military Weapons" 			, ",Tank,Gun,Grenade,Rocket,Bomb,Mine,"													, "dgbk"		,"E" ,4],
+			"Lv_6" 	: ["Office Appliances" 			, ",Calculator,Desk,Paper,Closet,Chair,Bulletin,WhiteBoard,"							, "gndd"		,"A" ,7],
+			"Lv_7" 	: ["Technical Tools" 			, ",Nail,Nut,Bolt,Screwdriver,Wrench,Handsaw,Hammer,Drill,Toolbox,"						, "dkdk"		,"H" ,9],
+			"Lv_8" 	: ["Vehicle Parts" 				, ",Wheel,Gear,AirBag,Mirror,Jack,Speedometer,"											, "fgjs"		,"L" ,3],
+			"Lv_9" 	: ["Cleaning Equipments" 		, ",Broom,Sponge,Tissue,Bucket,Squeegee,Dustpan,"										, "ghmu"		,"P" ,8]
+		},
+		
+		"Part_3" :
+		{
+			"CatTitle"		: "Food & Drinks",
+			"MysteryWord"		: "Masala Chai",
+			"MysteryWordDetails"		: "A drink from the heart of ancient Indian customs with many healing properties.",
+			"CatUnlockPrice"		: 200,
+			
+			"Lv_1" 	: ["Drinks" 					, ",Tea,Coffee,Beer,Wine,Milk,CocaCola,"												, "dfv"			,"A" ,2],
+			"Lv_2" 	: ["Fast Food Restaurants" 		, ",McDonalds,BurgerKing,Subway,Starbucks,Wendys,"										, "wrw"			,"A" ,4],
+			"Lv_3" 	: ["Meats" 						, ",Beef,Bacon,Ham,Pork,Chicken,Duck,Rabbit,Sausage,"									, "dfb"			,"I" ,11],
+			"Lv_4" 	: ["Tropical Fruits" 			, ",Avocado,Banana,Coconut,Grapefruit,Grape,Kiwi,Lemon,Mango,Orange,Pineapple,"			, "adct"		,"A" ,6],
+			"Lv_5" 	: ["Candy Bars" 				, ",Snickers,KitKat,Mars,Reeses,Twix,"													, "gbro"		,"S" ,3],
+			"Lv_6" 	: ["Vegetables" 				, ",Pea,Pumpkin,Onion,Tomato,Garlic,Potato,"											, "btge"		,"C" ,8],
+			"Lv_7" 	: ["Sea Foods" 					, ",Shrimp,Tuna,Caviar,Salmon,Crab,Trout,"												, "gbet"		,"M" ,1],
+			"Lv_8" 	: ["Sour Snacks" 				, ",Lemon,Yogurt,Vinegar,Pickles,FruitLeather,Wine,"									, "etbwf"		,"L" ,5],
+			"Lv_9" 	: ["Beans" 						, ",PintoBean,Pea,Lentil,MungBean,BroadBean,"											, "fgtyu"		,"A" ,10],
+			"Lv_10" : ["Pizzas" 					, ",Margherita,Pepperoni,Veggie,Greek,Hawaiian,"										, "fgjdy"		,"H" ,9]
+		},
+		
+		"Part_4" :
+		{
+			"CatTitle"		: "Geography & History",
+			"MysteryWord"		: "Mississippi",
+			"MysteryWordDetails"		: "A river and a state. The longest of its kind. it waters half of america.",
+			"CatUnlockPrice"		: 250,
+			
+			"Lv_1" 	: ["Types of Weather" 					, ",Sunny,Cloudy,Foggy,Rainy,Lightning,Snowy,Windy,Tornado,"					, "erg"				,"S" ,3],
+			"Lv_2" 	: ["Coldest Countries" 					, ",Russia,GreenLand,Canada,Sweden,Iceland,Norway,"								, "req"				,"S" ,4],
+			"Lv_3" 	: ["States in the US" 					, ",California,Florida,Nevada,Texas,NewYork,Hawaii,Washington,Colorado,Arizona,", "hte"				,"I" ,2],
+			"Lv_4" 	: ["European Capitals" 					, ",London,Athens,Berlin,Moscow,Paris,Lisbon,Madrid,Rome,Stockholm,Amsterdam,"	, "nmar"			,"M" ,1],
+			"Lv_5" 	: ["Biggest Cities" 					, ",Tokyo,Delhi,Shanghai,SaoPaulo,MexicoCity,"									, "rjww"			,"I" ,5],
+			"Lv_6" 	: ["Scandinavian Countries" 			, ",Denmark,Finland,Iceland,Norway,Sweden,"										, "ejwj"			,"S" ,6],
+			"Lv_7" 	: ["Ancient Countries" 					, ",Egypt,Greece,Iran,China,Portugal,India,Japan,"								, "ryjw"			,"I" ,8],
+			"Lv_8" 	: ["Countries in the Middle East" 		, ",Turkey,Lebanon,Iraq,Israel,Jordan,Egypt,"									, "erjk"			,"I" ,11],
+			"Lv_9" 	: ["Currencies" 						, ",Dollar,Euro,Pound,Yen,Franc,Rupee,"											, "ywysf"			,"P" ,9],
+			"Lv_10" : ["Oceans on Earth" 					, ",Atlantic,Pacific,Arctic,Indian,Caribbean,"									, "ywend"			,"P" ,10],
+			"Lv_11" : ["US Presidents on Mount Rushmore" 	, ",Washington,Roosevelt,Lincoln,Jefferson,"									, "rthxc"			,"S" ,7]
+		},
+		
+		"Part_5" :
+		{
+			"CatTitle"		: "Creatures",
+			"MysteryWord"		: "Methusaleh",
+			"MysteryWordDetails"		: "it was borned 4851 years ago in california. As a prophet in trees it reminds us of the importance of the environment.",
+			"CatUnlockPrice"		: 300,
+			
+			"Lv_1" 	: ["Pets" 						, ",Hamster,Dog,Cat,Turtle,Goldfish,Parrot,Rabbit,Mouse,"								, "etg"				,"U" ,5],
+			"Lv_2" 	: ["Parts of the Tree" 			, ",Trunk,Leaf,Root,Twig,Branch,Fruit,Crown,"											, "fhn"				,"T" ,3],
+			"Lv_3" 	: ["Domestic Animals" 			, ",Cow,Pig,Sheep,Horse,Donkey,Goat,Duck,Goose,Chicken,"								, "ser"				,"E" ,2],
+			"Lv_4" 	: ["Human Body Parts" 			, ",Skin,Liver,Brain,Lungs,Heart,Kidneys,Pancreas,Spleen,Thyroid,"						, "wert"			,"S" ,6],
+			"Lv_5" 	: ["Insects" 					, ",Beetle,Bee,Ladybird,Ant,Fly,Mantis,Flea,Butterfly,Bug,"								, "wrhl"			,"M" ,1],
+			"Lv_6" 	: ["Predator Animals" 			, ",Lion,Tiger,Cougar,Jaguar,Cheetah,Bear,Shark,"										, "tyms"			,"H" ,4],
+			"Lv_7" 	: ["Trees" 						, ",Oak,Palm,Poplar,Pine,Willow,Cypress,"												, "qwer"			,"L" ,8],
+			"Lv_8" 	: ["Animals with Horn" 			, ",Deer,Gazelle,Buffalo,Rhino,Giraffe,Goat,Cow,Sheep,"									, "werwe"			,"E" ,9],
+			"Lv_9" 	: ["Sea Animals" 				, ",Octopus,Frog,Crab,Whale,Fish,Jellyfish,Turtle,Seahorse,Starfish,"					, "ehrui"			,"H" ,10],
+			"Lv_10" : ["Animal Classifications" 	, ",Mammal,Bird,Fish,Insect,Reptile,Amphibian,"											, "wrezd"			,"A" ,7]
+		},
+		
+		"Part_6" :
+		{
+			"CatTitle"		: "Science",
+			"MysteryWord"		: "Alan Turing",
+			"MysteryWordDetails"		: "This is the details about the mystery word.",
+			"CatUnlockPrice"		: 350,
+			
+			"Lv_1" 	: ["Rainbow Colors" 			, ",Red,Orange,Yellow,Green,Blue,Indigo,Violet,"										, "dfg"				,"T" ,6],
+			"Lv_2" 	: ["Geometric Shapes" 			, ",Triangle,Square,Rectangle,Diamond,Circle,Oval,Hexagon,Pentagon,"					, "hrt"				,"R" ,8],
+			"Lv_3" 	: ["Planets in the Solar System", ",Earth,Jupiter,Mars,Neptune,Venus,Saturn,Uranus,Mercury,"							, "rte"				,"A" ,1],
+			"Lv_4" 	: ["Inventions in 1900s" 		, ",TeaBag,Radar,Plastic,Radio,Television,Penicillin,Helicopter,Computer,Internet,"		, "rtnr"			,"U" ,7],
+			"Lv_5" 	: ["Elements in Periodic Table" , ",Hydrogen,Helium,Oxygen,Carbon,Sodium,Gold,Iron,Copper,Silver,"						, "dbty"			,"I" ,9],
+			"Lv_6" 	: ["Greatest Inventors" 		, ",Edison,Tesla,Bell,Ford,DaVinci,Jobs,Guthenberg,Newton,Watt,"						, "uiui"			,"L" ,2],
+			"Lv_7" 	: ["Infectious Disease" 		, ",Coronavirus,Ebula,Plague,Malaria,Influenza,AIDS,Cholera,"							, "sdte"			,"G" ,11],
+			"Lv_8" 	: ["Renewable Energies" 		, ",Solar,Wind,Hydro,Tidal,Geothermal,Biomass,"											, "frgqw"			,"A" ,3],
+			"Lv_9" 	: ["Universities" 				, ",Oxford,Stanford,Cambridge,Harward,Massachusetts,Columbia, ,"						, "rtyyu"			,"N" ,10],
+			"Lv_10" : ["Types of Energy" 			, ",Thermal,Radiant,Chemical,Nuclear,Electrical,Motion,Gravitational,"					, "rtjeu"			,"N" ,9]
+		}
+	
+	}
+}  

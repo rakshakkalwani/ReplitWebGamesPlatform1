@@ -1,0 +1,10 @@
+{
+	"name": "Basket Slide",
+	"short_name": "Basket Slide",
+	"description": "1080 x 1920",
+	"start_url": "index.html",
+	"display": "fullscreen",
+	"orientation": "portrait",
+	"background_color": "#ffffff",
+	"icons": []
+}
