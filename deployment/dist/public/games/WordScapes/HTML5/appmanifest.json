@@ -1,0 +1,16 @@
+{
+	"name": "Wordscapes",
+	"short_name": "Wordscapes",
+	"description": "Wordscapes",
+	"start_url": "index.html",
+	"display": "fullscreen",
+	"orientation": "portrait",
+	"background_color": "#ffffff",
+	"icons": [
+		{
+			"src": "icons/icon.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}
