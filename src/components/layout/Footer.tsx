@@ -68,6 +68,7 @@ export default function Footer() {
         
         <div className="mt-12 pt-8 border-t border-gray-800 text-center">
           <p>&copy; {new Date().getFullYear()} GameZone. All rights reserved.</p>
+          <p className="text-xs mt-2 text-gray-500">v1.0.0-{import.meta.env.PROD ? 'p' : 'd'}</p>
         </div>
       </div>
     </footer>
