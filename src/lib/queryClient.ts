@@ -7,12 +7,36 @@ async function throwIfResNotOk(res: Response) {
   }
 }
 
+// Function to get the base URL for API requests
+function getApiBaseUrl(): string {
+  // In production, we need to use the current origin
+  // In development, we can use relative paths
+  return typeof window !== 'undefined' && 
+         typeof document !== 'undefined' && 
+         document.location.href.includes('/dist/')
+    ? window.location.origin 
+    : '';
+}
+
+// Function to ensure URL is absolute in production
+function getFullUrl(url: string): string {
+  // If URL already starts with http or https, it's already absolute
+  if (url.startsWith('http://') || url.startsWith('https://')) {
+    return url;
+  }
+  
+  // Otherwise, prepend the base URL
+  return `${getApiBaseUrl()}${url}`;
+}
+
 export async function apiRequest(
   method: string,
   url: string,
   data?: unknown | undefined,
 ): Promise<Response> {
-  const res = await fetch(url, {
+  const fullUrl = getFullUrl(url);
+  
+  const res = await fetch(fullUrl, {
     method,
     headers: data ? { "Content-Type": "application/json" } : {},
     body: data ? JSON.stringify(data) : undefined,
@@ -29,7 +53,10 @@ export const getQueryFn: <T>(options: {
 }) => QueryFunction<T> =
   ({ on401: unauthorizedBehavior }) =>
   async ({ queryKey }) => {
-    const res = await fetch(queryKey[0] as string, {
+    // Ensure the URL is absolute in production
+    const url = getFullUrl(queryKey[0] as string);
+    
+    const res = await fetch(url, {
       credentials: "include",
     });
 
