@@ -163,6 +163,9 @@ export default function GameDetails() {
       // End game
       setIsPlaying(false);
       
+      // Remove body overflow hidden
+      document.body.style.overflow = '';
+      
       // Record play session with current score
       playMutation.mutate();
       
@@ -174,6 +177,9 @@ export default function GameDetails() {
       // Start game
       setIsPlaying(true);
       setScore(0);
+      
+      // Prevent scrolling when in fullscreen mode
+      document.body.style.overflow = 'hidden';
       
       // Record that user started a game
       playMutation.mutate();
@@ -194,6 +200,8 @@ export default function GameDetails() {
     
     return () => {
       window.removeEventListener('message', handleGameMessage);
+      // Clean up body overflow style if component unmounts while playing
+      document.body.style.overflow = '';
     };
   }, []);
 
@@ -284,7 +292,7 @@ export default function GameDetails() {
                     className="w-full aspect-video object-cover"
                   />
                   {isPlaying ? (
-                    <div className="absolute inset-0 flex flex-col items-center bg-black">
+                    <div className="fixed inset-0 z-50 flex flex-col items-center bg-black">
                       <div className="flex justify-between items-center w-full p-2 bg-gray-800">
                         <div className="text-white font-bold">Score: {score}</div>
                         <Button 
@@ -300,6 +308,7 @@ export default function GameDetails() {
                         className="w-full h-full border-0"
                         title={game?.title}
                         sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+                        allowFullScreen
                       />
                     </div>
                   ) : (
