@@ -24,6 +24,7 @@ export const games = pgTable("games", {
   isNew: boolean("is_new").default(false),
   rating: integer("rating").default(0),
   playCount: integer("play_count").default(0),
+  hidden: boolean("hidden").default(false),
   createdAt: timestamp("created_at").defaultNow(),
 });
 

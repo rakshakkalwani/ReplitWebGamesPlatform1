@@ -109,7 +109,7 @@ export class MemStorage implements IStorage {
 
   // Game methods
   async getGames(): Promise<Game[]> {
-    return Array.from(this.games.values());
+    return Array.from(this.games.values()).filter(game => !game.hidden);
   }
 
   async getGame(id: number): Promise<Game | undefined> {
@@ -119,21 +119,24 @@ export class MemStorage implements IStorage {
   async getGamesByCategory(category: string): Promise<Game[]> {
     return Array.from(this.games.values()).filter(
       (game) =>
-        game.category.toLowerCase() === category.toLowerCase() ||
-        game.secondaryCategory?.toLowerCase() === category.toLowerCase(),
+        !game.hidden && (
+          game.category.toLowerCase() === category.toLowerCase() ||
+          game.secondaryCategory?.toLowerCase() === category.toLowerCase()
+        ),
     );
   }
 
   async getFeaturedGames(): Promise<Game[]> {
-    return Array.from(this.games.values()).filter((game) => game.isFeatured);
+    return Array.from(this.games.values()).filter((game) => !game.hidden && game.isFeatured);
   }
 
   async getNewGames(): Promise<Game[]> {
-    return Array.from(this.games.values()).filter((game) => game.isNew);
+    return Array.from(this.games.values()).filter((game) => !game.hidden && game.isNew);
   }
 
   async getPopularGames(limit: number): Promise<Game[]> {
     return Array.from(this.games.values())
+      .filter(game => !game.hidden)
       .sort((a, b) => (b.playCount || 0) - (a.playCount || 0))
       .slice(0, limit);
   }
@@ -281,6 +284,7 @@ export class MemStorage implements IStorage {
         isNew: true,
         rating: 5,
         playCount: 3032,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Basket Slide",
