@@ -9,7 +9,8 @@ import {
   Clock, 
   ThumbsUp,
   Send,
-  MessageSquare
+  MessageSquare,
+  Loader2
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
@@ -57,6 +58,7 @@ export default function GameDetails() {
   const [comment, setComment] = useState("");
   const [rating, setRating] = useState(5);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isGameLoading, setIsGameLoading] = useState(false);
   const [score, setScore] = useState(0);
 
   // Set page title
@@ -174,15 +176,25 @@ export default function GameDetails() {
         description: `You scored ${score} points!`
       });
     } else {
-      // Start game
-      setIsPlaying(true);
-      setScore(0);
+      // Start loading the game
+      setIsGameLoading(true);
       
-      // Prevent scrolling when in fullscreen mode
-      document.body.style.overflow = 'hidden';
-      
-      // Record that user started a game
-      playMutation.mutate();
+      // Start game after a short delay to show loading animation
+      setTimeout(() => {
+        setIsPlaying(true);
+        setScore(0);
+        
+        // Prevent scrolling when in fullscreen mode
+        document.body.style.overflow = 'hidden';
+        
+        // Record that user started a game
+        playMutation.mutate();
+        
+        // Remove loading state after game is shown
+        setTimeout(() => {
+          setIsGameLoading(false);
+        }, 1000);
+      }, 1500);
     }
   };
   
@@ -292,7 +304,13 @@ export default function GameDetails() {
                     className="w-full aspect-video object-cover"
                   />
                   {isPlaying ? (
-                    <div className="fixed inset-0 z-50 flex flex-col items-center bg-black">
+                    <motion.div 
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="fixed inset-0 z-50 flex flex-col items-center bg-black"
+                    >
                       <div className="flex justify-between items-center w-full p-2 bg-gray-800">
                         <div className="text-white font-bold">Score: {score}</div>
                         <Button 
@@ -310,16 +328,34 @@ export default function GameDetails() {
                         sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
                         allowFullScreen
                       />
-                    </div>
+                    </motion.div>
+                  ) : isGameLoading ? (
+                    <motion.div 
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0 bg-black/80 flex flex-col items-center justify-center"
+                    >
+                      <Loader2 className="h-16 w-16 text-indigo-500 animate-spin mb-4" />
+                      <h3 className="text-2xl font-bold text-white">Loading Game...</h3>
+                      <p className="text-gray-300 mt-2">Please wait while we prepare your gaming experience</p>
+                    </motion.div>
                   ) : (
                     <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                      <Button 
-                        onClick={handlePlay}
-                        className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-6 text-xl"
-                        size="lg"
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        Play Now
-                      </Button>
+                        <Button 
+                          onClick={handlePlay}
+                          className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-6 text-xl shadow-lg"
+                          size="lg"
+                        >
+                          Play Now
+                        </Button>
+                      </motion.div>
                     </div>
                   )}
                 </div>
