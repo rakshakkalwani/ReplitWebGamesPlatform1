@@ -1,0 +1,45 @@
+Warning: validateDOMNesting(...): <a> cannot appear as a descendant of &lt;a&gt;.
+    at a
+    at a
+    at https://90096963-5dbf-4523-82b5-8741e1f9deba-00-2iwf85zz1wmgh.sisko.replit.dev/node_modules/.vite/deps/wouter.js?v=31f270fe:337:18
+    at div
+    at div
+    at div
+    at div
+    at section
+    at PopularAndNewGames (https://90096963-5dbf-4523-82b5-8741e1f9deba-00-2iwf85zz1wmgh.sisko.replit.dev/src/components/home/PopularAndNewGames.tsx:25:61)
+    at main
+    at Home (https://90096963-5dbf-4523-82b5-8741e1f9deba-00-2iwf85zz1wmgh.sisko.replit.dev/src/pages/Home.tsx:27:3)
+    at Route (https://90096963-5dbf-4523-82b5-8741e1f9deba-00-2iwf85zz1wmgh.sisko.replit.dev/node_modules/.vite/deps/wouter.js?v=31f270fe:323:16)
+    at Switch (https://90096963-5dbf-4523-82b5-8741e1f9deba-00-2iwf85zz1wmgh.sisko.replit.dev/node_modules/.vite/deps/wouter.js?v=31f270fe:379:17)
+    at div
+    at div
+    at Router
+    at AuthProvider (https://90096963-5dbf-4523-82b5-8741e1f9deba-00-2iwf85zz1wmgh.sisko.replit.dev/src/context/AuthContext.tsx:21:32)
+    at ThemeProvider (https://90096963-5dbf-4523-82b5-8741e1f9deba-00-2iwf85zz1wmgh.sisko.replit.dev/src/context/ThemeContext.tsx:20:33)
+    at QueryClientProvider (https://90096963-5dbf-4523-82b5-8741e1f9deba-00-2iwf85zz1wmgh.sisko.replit.dev/node_modules/.vite/deps/@tanstack_react-query.js?v=31f270fe:2805:3)
+    at App
+at a
+at a
+at https://90096963-5dbf-4523-82b5-8741e1f9deba-00-2iwf85zz1wmgh.sisko.replit.dev/node_modules/.vite/deps/wouter.js?v=31f270fe:337:18
+at div
+at div
+at div
+at div
+at section
+at PopularAndNewGames (https://90096963-5dbf-4523-82b5-8741e1f9deba-00-2iwf85zz1wmgh.sisko.replit.dev/src/components/home/PopularAndNewGames.tsx:25:61)
+at main
+at Home (https://90096963-5dbf-4523-82b5-8741e1f9deba-00-2iwf85zz1wmgh.sisko.replit.dev/src/pages/Home.tsx:27:3)
+at Route (https://90096963-5dbf-4523-82b5-8741e1f9deba-00-2iwf85zz1wmgh.sisko.replit.dev/node_modules/.vite/deps/wouter.js?v=31f270fe:323:16)
+at Switch (https://90096963-5dbf-4523-82b5-8741e1f9deba-00-2iwf85zz1wmgh.sisko.replit.dev/node_modules/.vite/deps/wouter.js?v=31f270fe:379:17)
+at div
+at div
+at Router
+at AuthProvider (https://90096963-5dbf-4523-82b5-8741e1f9deba-00-2iwf85zz1wmgh.sisko.replit.dev/src/context/AuthContext.tsx:21:32)
+at ThemeProvider (https://90096963-5dbf-4523-82b5-8741e1f9deba-00-2iwf85zz1wmgh.sisko.replit.dev/src/context/ThemeContext.tsx:20:33)
+at QueryClientProvider (https://90096963-5dbf-4523-82b5-8741e1f9deba-00-2iwf85zz1wmgh.sisko.replit.dev/node_modules/.vite/deps/@tanstack_react-query.js?v=31f270fe:2805:3)
+at App
+at t.value (https://90096963-5dbf-4523-82b5-8741e1f9deba-00-2iwf85zz1wmgh.sisko.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:17465)
+at new t (https://90096963-5dbf-4523-82b5-8741e1f9deba-00-2iwf85zz1wmgh.sisko.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:12630)
+at t.value (https://90096963-5dbf-4523-82b5-8741e1f9deba-00-2iwf85zz1wmgh.sisko.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:32766)
+at https://90096963-5dbf-4523-82b5-8741e1f9deba-00-2iwf85zz1wmgh.sisko.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:34400

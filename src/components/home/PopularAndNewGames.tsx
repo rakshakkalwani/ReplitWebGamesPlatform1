@@ -38,8 +38,8 @@ export default function PopularAndNewGames() {
           <div className="w-full md:w-1/2">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-bold">Most Popular</h2>
-              <Link href="/games">
-                <a className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">See All</a>
+              <Link href="/games" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
+                See All
               </Link>
             </div>
             
@@ -97,10 +97,8 @@ export default function PopularAndNewGames() {
                         <span className="text-xs text-gray-500 dark:text-gray-400">
                           {((game.playCount || 0) / 1000).toFixed(1)}K+ players
                         </span>
-                        <Link href={`/games/${game.id}`}>
-                          <button className="text-indigo-600 dark:text-indigo-400 text-sm font-medium">
-                            Play
-                          </button>
+                        <Link href={`/games/${game.id}`} className="text-indigo-600 dark:text-indigo-400 text-sm font-medium">
+                          Play
                         </Link>
                       </div>
                     </div>
@@ -114,8 +112,8 @@ export default function PopularAndNewGames() {
           <div className="w-full md:w-1/2">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-bold">New Releases</h2>
-              <Link href="/games">
-                <a className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">See All</a>
+              <Link href="/games" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
+                See All
               </Link>
             </div>
             
@@ -171,10 +169,8 @@ export default function PopularAndNewGames() {
                           <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
                           <span className="text-sm font-medium ml-1">{game.rating}</span>
                         </div>
-                        <Link href={`/games/${game.id}`}>
-                          <button className="text-indigo-600 dark:text-indigo-400 text-sm font-medium">
-                            Play
-                          </button>
+                        <Link href={`/games/${game.id}`} className="text-indigo-600 dark:text-indigo-400 text-sm font-medium">
+                          Play
                         </Link>
                       </div>
                     </div>
