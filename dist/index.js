@@ -53,24 +53,24 @@ var MemStorage = class {
   }
   // Game methods
   async getGames() {
-    return Array.from(this.games.values());
+    return Array.from(this.games.values()).filter((game) => !game.hidden);
   }
   async getGame(id) {
     return this.games.get(id);
   }
   async getGamesByCategory(category) {
     return Array.from(this.games.values()).filter(
-      (game) => game.category.toLowerCase() === category.toLowerCase() || game.secondaryCategory?.toLowerCase() === category.toLowerCase()
+      (game) => !game.hidden && (game.category.toLowerCase() === category.toLowerCase() || game.secondaryCategory?.toLowerCase() === category.toLowerCase())
     );
   }
   async getFeaturedGames() {
-    return Array.from(this.games.values()).filter((game) => game.isFeatured);
+    return Array.from(this.games.values()).filter((game) => !game.hidden && game.isFeatured);
   }
   async getNewGames() {
-    return Array.from(this.games.values()).filter((game) => game.isNew);
+    return Array.from(this.games.values()).filter((game) => !game.hidden && game.isNew);
   }
   async getPopularGames(limit) {
-    return Array.from(this.games.values()).sort((a, b) => (b.playCount || 0) - (a.playCount || 0)).slice(0, limit);
+    return Array.from(this.games.values()).filter((game) => !game.hidden).sort((a, b) => (b.playCount || 0) - (a.playCount || 0)).slice(0, limit);
   }
   async createGame(insertGame) {
     const id = this.gameIdCounter++;
@@ -191,7 +191,9 @@ var MemStorage = class {
         isFeatured: true,
         isNew: true,
         rating: 5,
-        playCount: 3032
+        playCount: 3032,
+        hidden: true
+        // Hide this game from listings
       },
       {
         title: "Basket Slide",
@@ -1128,6 +1130,7 @@ var games = pgTable("games", {
   isNew: boolean("is_new").default(false),
   rating: integer("rating").default(0),
   playCount: integer("play_count").default(0),
+  hidden: boolean("hidden").default(false),
   createdAt: timestamp("created_at").defaultNow()
 });
 var comments = pgTable("comments", {
