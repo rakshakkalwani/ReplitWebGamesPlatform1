@@ -2,27 +2,15 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, Sun, Moon } from "lucide-react";
 import { useTheme } from "../../context/ThemeContext";
-import { useAuth } from "../../context/AuthContext";
 import { Button } from "../ui/button";
-import LoginModal from "../modals/LoginModal";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [loginModalOpen, setLoginModalOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
-  const { isAuthenticated, user, logout } = useAuth();
   const [location] = useLocation();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
-  };
-
-  const openLoginModal = () => {
-    setLoginModalOpen(true);
-  };
-
-  const closeLoginModal = () => {
-    setLoginModalOpen(false);
   };
 
   const navLinks = [
@@ -81,33 +69,6 @@ export default function Header() {
                 <Moon className="h-6 w-6" />
               )}
             </Button>
-            
-            {/* User Profile/Login */}
-            {isAuthenticated ? (
-              <div className="flex items-center space-x-3">
-                <Link href={`/profile/${user?.id}`}>
-                  <div className="h-8 w-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center cursor-pointer">
-                    <span className="text-indigo-600 dark:text-indigo-400 font-medium text-sm">
-                      {user?.avatar || user?.username.substring(0, 2).toUpperCase()}
-                    </span>
-                  </div>
-                </Link>
-                <Button 
-                  variant="outline" 
-                  onClick={logout}
-                  className="text-sm"
-                >
-                  Sign Out
-                </Button>
-              </div>
-            ) : (
-              <Button 
-                onClick={openLoginModal}
-                className="bg-indigo-600 hover:bg-indigo-700 text-white"
-              >
-                Sign In
-              </Button>
-            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -145,9 +106,6 @@ export default function Header() {
           </div>
         )}
       </div>
-
-      {/* Login Modal */}
-      <LoginModal isOpen={loginModalOpen} onClose={closeLoginModal} />
     </header>
   );
 }

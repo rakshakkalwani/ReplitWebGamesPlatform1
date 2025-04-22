@@ -1,16 +1,6 @@
 import { motion } from "framer-motion";
-import { useAuth } from "../../context/AuthContext";
-import { useState } from "react";
-import LoginModal from "../../components/modals/LoginModal";
 
 export default function CTA() {
-  const { isAuthenticated } = useAuth();
-  const [loginModalOpen, setLoginModalOpen] = useState(false);
-
-  const handleSignUpClick = () => {
-    setLoginModalOpen(true);
-  };
-
   return (
     <section className="py-12 md:py-16">
       <div className="container mx-auto px-4">
@@ -23,19 +13,17 @@ export default function CTA() {
         >
           <div className="flex flex-col md:flex-row items-center p-6 md:p-8">
             <div className="w-full md:w-2/3 text-white mb-6 md:mb-0">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">Create Your Game Profile</h2>
-              <p className="text-indigo-100 mb-6">Track your scores, compete in tournaments, earn rewards and connect with other players by creating your GameZone profile!</p>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">Explore Amazing Games</h2>
+              <p className="text-indigo-100 mb-6">Browse our collection of free online games! Find your favorites in various categories and enjoy endless gaming on our static website.</p>
               <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                {!isAuthenticated && (
-                  <motion.button 
-                    className="px-6 py-3 bg-white text-indigo-600 font-bold rounded-lg hover:bg-gray-100 transition shadow-md"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={handleSignUpClick}
-                  >
-                    Sign Up - It's Free
-                  </motion.button>
-                )}
+                <motion.a
+                  href="/games"
+                  className="px-6 py-3 bg-white text-indigo-600 font-bold rounded-lg hover:bg-gray-100 transition shadow-md text-center"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Browse Games
+                </motion.a>
                 <motion.button 
                   className="px-6 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition"
                   whileHover={{ scale: 1.05 }}
@@ -66,8 +54,6 @@ export default function CTA() {
           </div>
         </motion.div>
       </div>
-
-      <LoginModal isOpen={loginModalOpen} onClose={() => setLoginModalOpen(false)} />
     </section>
   );
 }
