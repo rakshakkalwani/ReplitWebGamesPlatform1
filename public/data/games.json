@@ -1,5 +1,19 @@
 [
   {
+    "title": "Alpha Balls",
+    "description": "Take a shot at the most unique challenge of the decade!",
+    "category": "puzzle",
+    "secondaryCategory": "casual",
+    "thumbnailUrl": "/games/AlphaBalls/HTML5/icons/icon-512.png",
+    "isFeatured": false,
+    "isNew": false,
+    "rating": 5,
+    "playCount": 1351,
+    "id": 1,
+    "hidden": true,
+    "createdAt": "2025-04-22T18:27:44.905Z"
+  },
+  {
     "title": "Basket Slide",
     "description": "Dive into this entertaining adventure game and test your skills!",
     "category": "action",
@@ -10,6 +24,7 @@
     "rating": 5,
     "playCount": 1351,
     "id": 2,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -36,6 +51,7 @@
     "rating": 5,
     "playCount": 2259,
     "id": 4,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -49,6 +65,7 @@
     "rating": 4,
     "playCount": 5540,
     "id": 5,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -75,6 +92,7 @@
     "rating": 4,
     "playCount": 3496,
     "id": 7,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -114,6 +132,7 @@
     "rating": 4,
     "playCount": 4182,
     "id": 10,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -140,6 +159,7 @@
     "rating": 5,
     "playCount": 3568,
     "id": 12,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -166,6 +186,7 @@
     "rating": 4,
     "playCount": 3929,
     "id": 14,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -192,6 +213,7 @@
     "rating": 4,
     "playCount": 1406,
     "id": 16,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -218,6 +240,7 @@
     "rating": 5,
     "playCount": 2986,
     "id": 18,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -231,6 +254,7 @@
     "rating": 5,
     "playCount": 2805,
     "id": 19,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -244,6 +268,7 @@
     "rating": 4,
     "playCount": 2184,
     "id": 20,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -257,6 +282,7 @@
     "rating": 5,
     "playCount": 5255,
     "id": 21,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -270,6 +296,7 @@
     "rating": 4,
     "playCount": 2513,
     "id": 22,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -283,6 +310,7 @@
     "rating": 4,
     "playCount": 1770,
     "id": 23,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -296,6 +324,7 @@
     "rating": 4,
     "playCount": 2091,
     "id": 24,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -335,6 +364,7 @@
     "rating": 4,
     "playCount": 1336,
     "id": 27,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -374,6 +404,7 @@
     "rating": 5,
     "playCount": 3024,
     "id": 30,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -387,6 +418,7 @@
     "rating": 4,
     "playCount": 4281,
     "id": 31,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -400,6 +432,7 @@
     "rating": 4,
     "playCount": 4967,
     "id": 32,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -413,6 +446,7 @@
     "rating": 5,
     "playCount": 1066,
     "id": 33,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -426,6 +460,7 @@
     "rating": 4,
     "playCount": 5876,
     "id": 34,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -439,6 +474,7 @@
     "rating": 4,
     "playCount": 5932,
     "id": 35,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -452,6 +488,7 @@
     "rating": 5,
     "playCount": 3190,
     "id": 36,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -465,6 +502,7 @@
     "rating": 5,
     "playCount": 5267,
     "id": 37,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -478,6 +516,7 @@
     "rating": 4,
     "playCount": 1168,
     "id": 38,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -569,6 +608,7 @@
     "rating": 5,
     "playCount": 1846,
     "id": 45,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -582,6 +622,7 @@
     "rating": 5,
     "playCount": 1257,
     "id": 46,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -595,6 +636,7 @@
     "rating": 5,
     "playCount": 2004,
     "id": 47,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -608,6 +650,7 @@
     "rating": 5,
     "playCount": 1187,
     "id": 48,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -621,6 +664,7 @@
     "rating": 4,
     "playCount": 1349,
     "id": 49,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
@@ -634,6 +678,7 @@
     "rating": 4,
     "playCount": 1289,
     "id": 50,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -647,6 +692,7 @@
     "rating": 4,
     "playCount": 5764,
     "id": 51,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -660,6 +706,7 @@
     "rating": 4,
     "playCount": 1042,
     "id": 52,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -673,6 +720,7 @@
     "rating": 4,
     "playCount": 1232,
     "id": 53,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -686,6 +734,7 @@
     "rating": 5,
     "playCount": 1366,
     "id": 54,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -699,6 +748,7 @@
     "rating": 4,
     "playCount": 5674,
     "id": 55,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -725,6 +775,7 @@
     "rating": 4,
     "playCount": 1602,
     "id": 57,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -764,6 +815,7 @@
     "rating": 5,
     "playCount": 2924,
     "id": 60,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -777,6 +829,7 @@
     "rating": 4,
     "playCount": 3399,
     "id": 61,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -790,6 +843,7 @@
     "rating": 4,
     "playCount": 5106,
     "id": 62,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -803,6 +857,7 @@
     "rating": 5,
     "playCount": 1899,
     "id": 63,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -816,6 +871,7 @@
     "rating": 5,
     "playCount": 4116,
     "id": 64,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -829,6 +885,7 @@
     "rating": 4,
     "playCount": 5149,
     "id": 65,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -855,6 +912,7 @@
     "rating": 5,
     "playCount": 5817,
     "id": 67,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -868,6 +926,7 @@
     "rating": 5,
     "playCount": 5603,
     "id": 68,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -881,6 +940,7 @@
     "rating": 5,
     "playCount": 2544,
     "id": 69,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -894,6 +954,7 @@
     "rating": 5,
     "playCount": 3292,
     "id": 70,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -907,6 +968,7 @@
     "rating": 5,
     "playCount": 4595,
     "id": 71,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -920,6 +982,7 @@
     "rating": 4,
     "playCount": 2804,
     "id": 72,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -933,6 +996,7 @@
     "rating": 4,
     "playCount": 4483,
     "id": 73,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -946,6 +1010,7 @@
     "rating": 5,
     "playCount": 4964,
     "id": 74,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -959,6 +1024,7 @@
     "rating": 5,
     "playCount": 3173,
     "id": 75,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -972,6 +1038,7 @@
     "rating": 4,
     "playCount": 1071,
     "id": 76,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
@@ -985,6 +1052,7 @@
     "rating": 5,
     "playCount": 2961,
     "id": 77,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.906Z"
   },
   {
