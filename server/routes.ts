@@ -7,15 +7,8 @@ import { fromZodError } from "zod-validation-error";
 import path from "path";
 import express from "express";
 import fs from "fs";
-import { fixMimeTypes, spaFallback } from "./middleware";
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Apply MIME type fix middleware
-  app.use(fixMimeTypes);
-  
-  // Let Vite handle the source files
-  // DO NOT serve static src files directly as they need processing by Vite
-  
   // Serve the data directory and other static files
   app.use('/data', express.static(path.join(process.cwd(), 'public', 'data')));
   
@@ -267,8 +260,21 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Use our SPA fallback middleware for client-side routing
-  app.use(spaFallback);
+  // Catch-all route to handle direct access to client routes
+  // This should be placed after all API routes but before creating the server
+  app.get('*', (req, res, next) => {
+    // Skip API routes
+    if (req.path.startsWith('/api/')) {
+      return next();
+    }
+    
+    // Serve the main index.html for all client-side routes
+    const indexPath = path.join(process.cwd(), 'index.html');
+    if (fs.existsSync(indexPath)) {
+      return res.sendFile(indexPath);
+    }
+    next();
+  });
 
   const httpServer = createServer(app);
   return httpServer;
