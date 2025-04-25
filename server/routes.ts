@@ -1,4 +1,4 @@
-import type { Express, Request, Response, NextFunction } from "express";
+import type { Express, Request, Response } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertUserSchema, insertCommentSchema, insertRatingSchema, insertGameHistorySchema } from "@shared/schema";
@@ -6,13 +6,9 @@ import { ZodError } from "zod";
 import { fromZodError } from "zod-validation-error";
 import path from "path";
 import express from "express";
-import fs from "fs";
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Serve the data directory and other static files
-  app.use('/data', express.static(path.join(process.cwd(), 'public', 'data')));
-  
-  // Special handling for game files
+  // Serve game files from the public directory
   app.use('/games', express.static(path.join(process.cwd(), 'public', 'games')));
   
   // Error handler middleware for zod validation errors
@@ -258,22 +254,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.error(err);
       res.status(500).json({ message: "Failed to get game history" });
     }
-  });
-
-  // Catch-all route to handle direct access to client routes
-  // This should be placed after all API routes but before creating the server
-  app.get('*', (req, res, next) => {
-    // Skip API routes
-    if (req.path.startsWith('/api/')) {
-      return next();
-    }
-    
-    // Serve the main index.html for all client-side routes
-    const indexPath = path.join(process.cwd(), 'index.html');
-    if (fs.existsSync(indexPath)) {
-      return res.sendFile(indexPath);
-    }
-    next();
   });
 
   const httpServer = createServer(app);
