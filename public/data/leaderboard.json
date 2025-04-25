@@ -1,1 +1,47 @@
-[{"username":"JediMaster","email":"jedi@example.com","avatar":"JD","level":42,"points":9845,"id":1,"createdAt":"2025-04-22T18:27:44.905Z"},{"username":"PixelPro","email":"pixel@example.com","avatar":"PP","level":39,"points":8732,"id":2,"createdAt":"2025-04-22T18:27:44.905Z"},{"username":"GameWizard","email":"wizard@example.com","avatar":"GW","level":37,"points":7914,"id":3,"createdAt":"2025-04-22T18:27:44.905Z"},{"username":"NinjaSlayer","email":"ninja@example.com","avatar":"NS","level":34,"points":7156,"id":4,"createdAt":"2025-04-22T18:27:44.905Z"},{"username":"RocketPower","email":"rocket@example.com","avatar":"RP","level":31,"points":6873,"id":5,"createdAt":"2025-04-22T18:27:44.905Z"}]
+[
+  {
+    "username": "JediMaster",
+    "email": "jedi@example.com",
+    "avatar": "JD",
+    "level": 42,
+    "points": 9845,
+    "id": 1,
+    "createdAt": "2025-04-22T18:27:44.905Z"
+  },
+  {
+    "username": "PixelPro",
+    "email": "pixel@example.com",
+    "avatar": "PP",
+    "level": 39,
+    "points": 8732,
+    "id": 2,
+    "createdAt": "2025-04-22T18:27:44.905Z"
+  },
+  {
+    "username": "GameWizard",
+    "email": "wizard@example.com",
+    "avatar": "GW",
+    "level": 37,
+    "points": 7914,
+    "id": 3,
+    "createdAt": "2025-04-22T18:27:44.905Z"
+  },
+  {
+    "username": "NinjaSlayer",
+    "email": "ninja@example.com",
+    "avatar": "NS",
+    "level": 34,
+    "points": 7156,
+    "id": 4,
+    "createdAt": "2025-04-22T18:27:44.905Z"
+  },
+  {
+    "username": "RocketPower",
+    "email": "rocket@example.com",
+    "avatar": "RP",
+    "level": 31,
+    "points": 6873,
+    "id": 5,
+    "createdAt": "2025-04-22T18:27:44.905Z"
+  }
+]

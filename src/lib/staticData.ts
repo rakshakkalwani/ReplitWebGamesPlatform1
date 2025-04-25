@@ -14,30 +14,44 @@ export async function loadStaticData<T>(path: string): Promise<T> {
   }
 }
 
-// Filter function to exclude hidden games
-function filterHiddenGames(games: Game[]): Game[] {
-  return games.filter(game => !game.hidden);
+// Cache the games data to avoid multiple fetches
+let gamesCache: Game[] | null = null;
+const cacheTimeout = 60000; // 1 minute cache
+let lastCacheTime = 0;
+
+// Get all games and apply filtering
+async function getFilteredGames(): Promise<Game[]> {
+  const now = Date.now();
+  if (!gamesCache || now - lastCacheTime > cacheTimeout) {
+    const games = await loadStaticData<Game[]>('games.json');
+    gamesCache = games.filter(game => !game.hidden);
+    lastCacheTime = now;
+    console.log(`Loaded ${gamesCache.length} games from games.json`);
+  }
+  return gamesCache;
 }
 
 // Helper functions for common data types
 export async function getAllGames(): Promise<Game[]> {
-  const games = await loadStaticData<Game[]>('games.json');
-  return filterHiddenGames(games);
+  return getFilteredGames();
 }
 
 export async function getFeaturedGames(): Promise<Game[]> {
-  const games = await loadStaticData<Game[]>('featured-games.json');
-  return filterHiddenGames(games);
+  const games = await getFilteredGames();
+  return games.filter(game => game.isFeatured);
 }
 
 export async function getNewGames(): Promise<Game[]> {
-  const games = await loadStaticData<Game[]>('new-games.json');
-  return filterHiddenGames(games);
+  const games = await getFilteredGames();
+  return games.filter(game => game.isNew);
 }
 
 export async function getPopularGames(): Promise<Game[]> {
-  const games = await loadStaticData<Game[]>('popular-games.json');
-  return filterHiddenGames(games);
+  const games = await getFilteredGames();
+  // Sort by play count and take top 10 games
+  return games
+    .sort((a, b) => (b.playCount || 0) - (a.playCount || 0))
+    .slice(0, 10);
 }
 
 export async function getLeaderboard(): Promise<User[]> {
@@ -45,7 +59,21 @@ export async function getLeaderboard(): Promise<User[]> {
 }
 
 export async function getGame(id: number): Promise<Game> {
-  return loadStaticData<Game>(`games/${id}.json`);
+  // Try to find the game in the cache first
+  if (gamesCache) {
+    const game = gamesCache.find(g => g.id === id);
+    if (game) return game;
+  }
+  
+  // If not in cache or cache is empty, try to get from all games
+  const allGames = await getFilteredGames();
+  const game = allGames.find(g => g.id === id);
+  
+  if (!game) {
+    throw new Error(`Game with ID ${id} not found`);
+  }
+  
+  return game;
 }
 
 export async function getGameComments(gameId: number): Promise<Comment[]> {

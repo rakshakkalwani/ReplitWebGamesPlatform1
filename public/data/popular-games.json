@@ -1,1 +1,67 @@
-[{"title":"House Paint","description":"Play this entertaining multiplayer game and test your skills!","category":"racing","secondaryCategory":"educational","thumbnailUrl":"/games/HousePaint/HTML5/icons/icon-512.png","isFeatured":false,"isNew":false,"rating":4,"playCount":5932,"id":35,"createdAt":"2025-04-22T18:27:44.905Z"},{"title":"Happy Glass 3","description":"Play this fun sports game and test your skills!","category":"board","secondaryCategory":"adventure","thumbnailUrl":"/games/HappyGlass3/HTML5/icon-256.png","isFeatured":true,"isNew":false,"rating":4,"playCount":5876,"id":34,"createdAt":"2025-04-22T18:27:44.905Z"},{"title":"Two Dots 1","description":"Dive into this exciting puzzle game and test your skills!","category":"board","secondaryCategory":"action","thumbnailUrl":"/games/TwoDotsG1/HTML5/icons/icon-256.png","isFeatured":false,"isNew":false,"rating":5,"playCount":5817,"id":67,"createdAt":"2025-04-22T18:27:44.906Z"},{"title":"Plus Puzzle","description":"Experience this exciting racing game and test your skills!","category":"sports","secondaryCategory":"arcade","thumbnailUrl":"/games/PlusPuzzle/HTML5/icons/icon-512.png","isFeatured":false,"isNew":false,"rating":4,"playCount":5764,"id":51,"createdAt":"2025-04-22T18:27:44.906Z"},{"title":"Colored Bricks","description":"Enjoy this challenging casual game and test your skills!","category":"puzzle","secondaryCategory":"adventure","thumbnailUrl":"/games/ColoredBricks/HTML5/icons/icon-512.png","isFeatured":true,"isNew":false,"rating":4,"playCount":5737,"id":11,"createdAt":"2025-04-22T18:27:44.905Z"}]
+[
+  {
+    "title": "House Paint",
+    "description": "Play this entertaining multiplayer game and test your skills!",
+    "category": "racing",
+    "secondaryCategory": "educational",
+    "thumbnailUrl": "/games/HousePaint/HTML5/icons/icon-512.png",
+    "isFeatured": false,
+    "isNew": false,
+    "rating": 4,
+    "playCount": 5932,
+    "id": 35,
+    "createdAt": "2025-04-22T18:27:44.905Z"
+  },
+  {
+    "title": "Happy Glass 3",
+    "description": "Play this fun sports game and test your skills!",
+    "category": "board",
+    "secondaryCategory": "adventure",
+    "thumbnailUrl": "/games/HappyGlass3/HTML5/icon-256.png",
+    "isFeatured": true,
+    "isNew": false,
+    "rating": 4,
+    "playCount": 5876,
+    "id": 34,
+    "createdAt": "2025-04-22T18:27:44.905Z"
+  },
+  {
+    "title": "Two Dots 1",
+    "description": "Dive into this exciting puzzle game and test your skills!",
+    "category": "board",
+    "secondaryCategory": "action",
+    "thumbnailUrl": "/games/TwoDotsG1/HTML5/icons/icon-256.png",
+    "isFeatured": false,
+    "isNew": false,
+    "rating": 5,
+    "playCount": 5817,
+    "id": 67,
+    "createdAt": "2025-04-22T18:27:44.906Z"
+  },
+  {
+    "title": "Plus Puzzle",
+    "description": "Experience this exciting racing game and test your skills!",
+    "category": "sports",
+    "secondaryCategory": "arcade",
+    "thumbnailUrl": "/games/PlusPuzzle/HTML5/icons/icon-512.png",
+    "isFeatured": false,
+    "isNew": false,
+    "rating": 4,
+    "playCount": 5764,
+    "id": 51,
+    "createdAt": "2025-04-22T18:27:44.906Z"
+  },
+  {
+    "title": "Colored Bricks",
+    "description": "Enjoy this challenging casual game and test your skills!",
+    "category": "puzzle",
+    "secondaryCategory": "adventure",
+    "thumbnailUrl": "/games/ColoredBricks/HTML5/icons/icon-512.png",
+    "isFeatured": true,
+    "isNew": false,
+    "rating": 4,
+    "playCount": 5737,
+    "id": 11,
+    "createdAt": "2025-04-22T18:27:44.905Z"
+  }
+]
