@@ -109,7 +109,7 @@ export class MemStorage implements IStorage {
 
   // Game methods
   async getGames(): Promise<Game[]> {
-    return Array.from(this.games.values()).filter(game => !game.hidden);
+    return Array.from(this.games.values()).filter((game) => !game.hidden);
   }
 
   async getGame(id: number): Promise<Game | undefined> {
@@ -119,24 +119,27 @@ export class MemStorage implements IStorage {
   async getGamesByCategory(category: string): Promise<Game[]> {
     return Array.from(this.games.values()).filter(
       (game) =>
-        !game.hidden && (
-          game.category.toLowerCase() === category.toLowerCase() ||
-          game.secondaryCategory?.toLowerCase() === category.toLowerCase()
-        ),
+        !game.hidden &&
+        (game.category.toLowerCase() === category.toLowerCase() ||
+          game.secondaryCategory?.toLowerCase() === category.toLowerCase()),
     );
   }
 
   async getFeaturedGames(): Promise<Game[]> {
-    return Array.from(this.games.values()).filter((game) => !game.hidden && game.isFeatured);
+    return Array.from(this.games.values()).filter(
+      (game) => !game.hidden && game.isFeatured,
+    );
   }
 
   async getNewGames(): Promise<Game[]> {
-    return Array.from(this.games.values()).filter((game) => !game.hidden && game.isNew);
+    return Array.from(this.games.values()).filter(
+      (game) => !game.hidden && game.isNew,
+    );
   }
 
   async getPopularGames(limit: number): Promise<Game[]> {
     return Array.from(this.games.values())
-      .filter(game => !game.hidden)
+      .filter((game) => !game.hidden)
       .sort((a, b) => (b.playCount || 0) - (a.playCount || 0))
       .slice(0, limit);
   }
@@ -297,6 +300,7 @@ export class MemStorage implements IStorage {
         isNew: true,
         rating: 5,
         playCount: 1351,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Blocks 8",
@@ -309,6 +313,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 5,
         playCount: 1500,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Blocky 360",
@@ -321,6 +326,7 @@ export class MemStorage implements IStorage {
         isNew: true,
         rating: 5,
         playCount: 2259,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Blue Block",
@@ -332,6 +338,7 @@ export class MemStorage implements IStorage {
         isNew: true,
         rating: 4,
         playCount: 5540,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Bounce",
@@ -356,6 +363,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 3496,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Cards 2048",
@@ -391,6 +399,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 4182,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Colored Bricks",
@@ -414,6 +423,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 5,
         playCount: 3568,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Connect Merge",
@@ -438,6 +448,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 3929,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Cube Jump",
@@ -462,6 +473,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 1406,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Disk Rush",
@@ -473,6 +485,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 2191,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Donut Box",
@@ -484,6 +497,7 @@ export class MemStorage implements IStorage {
         isNew: true,
         rating: 5,
         playCount: 2986,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Dotted Fill",
@@ -496,6 +510,7 @@ export class MemStorage implements IStorage {
         isNew: true,
         rating: 5,
         playCount: 2805,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Draw In",
@@ -508,6 +523,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 2184,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Drifter",
@@ -531,6 +547,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 2513,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Equalz",
@@ -542,6 +559,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 1770,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Filling Lines",
@@ -554,6 +572,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 2091,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Fire Up",
@@ -587,6 +606,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 1336,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Fours",
@@ -599,6 +619,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 5063,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Free Kick",
@@ -611,6 +632,7 @@ export class MemStorage implements IStorage {
         isNew: true,
         rating: 4,
         playCount: 1963,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Fruit Master",
@@ -634,6 +656,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 4281,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Happy Glass 1",
@@ -645,6 +668,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 4967,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Happy Glass 2",
@@ -657,6 +681,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 5,
         playCount: 1066,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Happy Glass 3",
@@ -668,6 +693,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 5876,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "House Paint",
@@ -680,6 +706,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 5932,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Jelly Manager",
@@ -691,6 +718,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 5,
         playCount: 3190,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Knots",
@@ -703,6 +731,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 5,
         playCount: 5267,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Ludo",
@@ -714,6 +743,7 @@ export class MemStorage implements IStorage {
         isNew: true,
         rating: 4,
         playCount: 1168,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Make 5",
@@ -795,6 +825,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 5,
         playCount: 1846,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Node",
@@ -806,6 +837,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 5,
         playCount: 1257,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Number Maze",
@@ -817,6 +849,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 5,
         playCount: 2004,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Omino",
@@ -829,6 +862,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 5,
         playCount: 1187,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Pattern",
@@ -841,6 +875,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 1349,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Pixel Slide",
@@ -853,6 +888,7 @@ export class MemStorage implements IStorage {
         isNew: true,
         rating: 4,
         playCount: 1289,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Plus Puzzle",
@@ -877,6 +913,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 1042,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Puzzle Color",
@@ -889,6 +926,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 1232,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "RUIN",
@@ -901,6 +939,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 5,
         playCount: 1366,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Release",
@@ -913,6 +952,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 5674,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Rolly Vortex",
@@ -937,6 +977,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 1602,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Space Shooter",
@@ -960,6 +1001,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 3593,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Squ Area 1",
@@ -972,6 +1014,7 @@ export class MemStorage implements IStorage {
         isNew: true,
         rating: 5,
         playCount: 2924,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Swipe Cubes",
@@ -984,6 +1027,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 3399,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Take Off",
@@ -1007,6 +1051,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 5,
         playCount: 1899,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Taxi Pickup",
@@ -1019,6 +1064,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 5,
         playCount: 4116,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Tiny Cars",
@@ -1030,6 +1076,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 5149,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Toops",
@@ -1054,6 +1101,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 5,
         playCount: 5817,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Two Dots 2",
@@ -1066,6 +1114,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 5,
         playCount: 5603,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Two Dots 3",
@@ -1077,6 +1126,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 5,
         playCount: 2544,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Two Dots 4",
@@ -1089,6 +1139,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 5,
         playCount: 3292,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Two Tiles",
@@ -1101,6 +1152,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 5,
         playCount: 4595,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Type Shift",
@@ -1112,6 +1164,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 2804,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Word Scapes",
@@ -1124,6 +1177,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 4,
         playCount: 4483,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Word Story",
@@ -1136,6 +1190,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 5,
         playCount: 4964,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Word Swipe",
@@ -1147,6 +1202,7 @@ export class MemStorage implements IStorage {
         isNew: false,
         rating: 5,
         playCount: 3173,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Word Wood",
@@ -1159,6 +1215,7 @@ export class MemStorage implements IStorage {
         isNew: true,
         rating: 4,
         playCount: 1071,
+        hidden: true, // Hide this game from listings
       },
       {
         title: "Zero 21",
@@ -1171,6 +1228,7 @@ export class MemStorage implements IStorage {
         isNew: true,
         rating: 5,
         playCount: 2961,
+        hidden: true, // Hide this game from listings
       },
     ];
 

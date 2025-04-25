@@ -1,4 +1,4 @@
-import { Game, User, Comment } from '@shared/schema';
+import { Game, User, Comment } from '../../shared/schema';
 
 // Function to load data from static JSON files
 export async function loadStaticData<T>(path: string): Promise<T> {
@@ -14,21 +14,30 @@ export async function loadStaticData<T>(path: string): Promise<T> {
   }
 }
 
+// Filter function to exclude hidden games
+function filterHiddenGames(games: Game[]): Game[] {
+  return games.filter(game => !game.hidden);
+}
+
 // Helper functions for common data types
 export async function getAllGames(): Promise<Game[]> {
-  return loadStaticData<Game[]>('games.json');
+  const games = await loadStaticData<Game[]>('games.json');
+  return filterHiddenGames(games);
 }
 
 export async function getFeaturedGames(): Promise<Game[]> {
-  return loadStaticData<Game[]>('featured-games.json');
+  const games = await loadStaticData<Game[]>('featured-games.json');
+  return filterHiddenGames(games);
 }
 
 export async function getNewGames(): Promise<Game[]> {
-  return loadStaticData<Game[]>('new-games.json');
+  const games = await loadStaticData<Game[]>('new-games.json');
+  return filterHiddenGames(games);
 }
 
 export async function getPopularGames(): Promise<Game[]> {
-  return loadStaticData<Game[]>('popular-games.json');
+  const games = await loadStaticData<Game[]>('popular-games.json');
+  return filterHiddenGames(games);
 }
 
 export async function getLeaderboard(): Promise<User[]> {

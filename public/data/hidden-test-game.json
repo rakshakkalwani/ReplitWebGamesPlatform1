@@ -1,0 +1,14 @@
+{
+  "title": "Hidden Test Game",
+  "description": "This is a test game that should be hidden from display.",
+  "category": "test",
+  "secondaryCategory": "test",
+  "thumbnailUrl": "/games/test/icon.png",
+  "isFeatured": false,
+  "isNew": false,
+  "rating": 0,
+  "playCount": 0,
+  "hidden": true,
+  "id": 999,
+  "createdAt": "2025-04-25T11:48:00.000Z"
+}
