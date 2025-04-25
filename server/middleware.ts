@@ -4,8 +4,12 @@ import fs from "fs";
 
 // Middleware to properly set MIME types for JavaScript modules
 export function fixMimeTypes(req: Request, res: Response, next: NextFunction) {
-  if (req.path.endsWith('.js') || req.path.endsWith('.mjs') || req.path.endsWith('.tsx')) {
+  if (req.path.endsWith('.js') || req.path.endsWith('.mjs')) {
     res.type('application/javascript');
+  } else if (req.path.endsWith('.tsx') || req.path.endsWith('.ts')) {
+    // For development mode, .tsx and .ts files need to be processed by Vite first
+    // Don't set content type here as Vite will handle it
+    res.removeHeader('Content-Type');
   } else if (req.path.endsWith('.css')) {
     res.type('text/css');
   } else if (req.path.endsWith('.html')) {

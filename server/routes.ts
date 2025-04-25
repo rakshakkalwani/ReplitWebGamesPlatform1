@@ -13,14 +13,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Apply MIME type fix middleware
   app.use(fixMimeTypes);
   
-  // Serve static files with proper MIME types
-  app.use('/src', express.static(path.join(process.cwd(), 'src'), {
-    setHeaders: (res, filePath) => {
-      if (filePath.endsWith('.ts') || filePath.endsWith('.tsx') || filePath.endsWith('.js')) {
-        res.setHeader('Content-Type', 'application/javascript');
-      }
-    }
-  }));
+  // Let Vite handle the source files
+  // DO NOT serve static src files directly as they need processing by Vite
   
   // Serve the data directory and other static files
   app.use('/data', express.static(path.join(process.cwd(), 'public', 'data')));

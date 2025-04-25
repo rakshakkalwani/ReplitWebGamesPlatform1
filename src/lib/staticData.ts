@@ -48,7 +48,15 @@ export async function getNewGames(): Promise<Game[]> {
 
 export async function getPopularGames(): Promise<Game[]> {
   const games = await getFilteredGames();
-  // Sort by play count and take top 10 games
+  
+  // Either use the isPopular property if present, or fallback to playCount sorting
+  const popularByProperty = games.filter(game => game.isPopular);
+  
+  if (popularByProperty.length > 0) {
+    return popularByProperty;
+  }
+  
+  // Fallback: sort by play count and take top 10 games
   return games
     .sort((a, b) => (b.playCount || 0) - (a.playCount || 0))
     .slice(0, 10);
