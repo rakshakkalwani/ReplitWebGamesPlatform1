@@ -17,6 +17,7 @@ import { useToast } from "../hooks/use-toast";
 import { motion, AnimatePresence } from "framer-motion";
 import { Skeleton } from "../components/ui/skeleton";
 import { recordGamePlay } from "../lib/staticData";
+import TutorialButton from "../components/tutorial/TutorialButton";
 
 // Helper function to determine game path based on the game title
 const getGamePath = (gameTitle?: string): string => {
@@ -166,7 +167,16 @@ export default function GameDetails() {
           {gameLoading ? (
             <Skeleton className="h-10 w-2/3 mb-4" />
           ) : (
-            <h1 className="text-3xl md:text-4xl font-bold">{game?.title}</h1>
+            <div className="flex items-center">
+              <h1 className="text-3xl md:text-4xl font-bold">{game?.title}</h1>
+              {game && (
+                <TutorialButton 
+                  tutorialId={game?.id === 6 ? 'bounce-tutorial' : 
+                               game?.id === 2 ? 'basket-slide-tutorial' : ''}
+                  className="ml-2" 
+                />
+              )}
+            </div>
           )}
         </div>
         
@@ -294,13 +304,30 @@ export default function GameDetails() {
             {/* Game Info Card */}
             <Card className="mb-6">
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold mb-4">How to Play</h3>
+                <div className="flex items-center">
+                  <h3 className="text-lg font-semibold mb-4 mr-2">How to Play</h3>
+                  {game && (game.id === 6 || game.id === 2) && (
+                    <TutorialButton 
+                      tutorialId={game.id === 6 ? 'bounce-tutorial' : 'basket-slide-tutorial'} 
+                    />
+                  )}
+                </div>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
                   Click the "Play Now" button to start playing. Use your keyboard and mouse to control the game.
                 </p>
-                <p className="text-gray-700 dark:text-gray-300">
+                <p className="text-gray-700 dark:text-gray-300 mb-4">
                   Press the "End Game" button when you're done to exit full-screen mode and return to the website.
                 </p>
+                {game && (game.id === 6 || game.id === 2) && (
+                  <p className="text-indigo-600 dark:text-indigo-400 flex items-center">
+                    <span className="mr-2">New to this game?</span>
+                    <TutorialButton 
+                      tutorialId={game.id === 6 ? 'bounce-tutorial' : 'basket-slide-tutorial'} 
+                      className="text-indigo-600 dark:text-indigo-400"
+                    />
+                    <span className="ml-2">Click to view the tutorial!</span>
+                  </p>
+                )}
               </CardContent>
             </Card>
           </div>
