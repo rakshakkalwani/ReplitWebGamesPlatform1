@@ -4,6 +4,8 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "./components/ui/toaster";
 import { ThemeProvider } from "./context/ThemeContext";
 import { AuthProvider } from "./context/AuthContext";
+import { TutorialProvider } from "./context/TutorialContext";
+import TutorialOverlay from "./components/tutorial/TutorialOverlay";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
@@ -37,8 +39,11 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <AuthProvider>
-          <Router />
-          <Toaster />
+          <TutorialProvider>
+            <Router />
+            <TutorialOverlay />
+            <Toaster />
+          </TutorialProvider>
         </AuthProvider>
       </ThemeProvider>
     </QueryClientProvider>
