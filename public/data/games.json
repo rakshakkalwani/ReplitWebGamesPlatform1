@@ -943,7 +943,7 @@
     "category": "sports",
     "secondaryCategory": "adventure",
     "thumbnailUrl": "/games/TwoDotsG1/HTML5/icons/icon-256.png",
-    "isFeatured": true,
+    "isFeatured": false,
     "isNew": false,
     "rating": 5,
     "playCount": 4964,
