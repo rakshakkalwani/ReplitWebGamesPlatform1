@@ -257,6 +257,7 @@
     "rating": 5,
     "playCount": 5255,
     "id": 21,
+    "hidden": true,
     "createdAt": "2025-04-22T18:27:44.905Z"
   },
   {
