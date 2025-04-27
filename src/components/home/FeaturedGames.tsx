@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Game } from "../../shared/schema";
+import { Game } from "@shared/schema";
 import { GameCard } from "../ui/game-card";
 import { Button } from "../ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -90,7 +90,7 @@ export default function FeaturedGames() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full"
+                  className="flex space-x-6 w-full"
                 >
                   {displayedGames?.map((game) => (
                     <div key={game.id} className="w-64 md:w-full flex-shrink-0">
