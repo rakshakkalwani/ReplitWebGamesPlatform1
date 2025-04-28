@@ -2,7 +2,8 @@ import { GameCategory } from "@shared/schema";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { 
-  Puzzle, PlayCircle, Globe, Flame, Users, Zap, 
+  Puzzle, PlayCircle, Globe, Flame, Users, Zap,
+  Trophy, ChessKnight, Text,
   LucideIcon 
 } from "lucide-react";
 
