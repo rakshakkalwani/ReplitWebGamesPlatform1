@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { 
   Puzzle, PlayCircle, Globe, Flame, Users, Zap,
-  Trophy, Chess, Text,
+  Trophy, Text,
   LucideIcon 
 } from "lucide-react";
 
@@ -19,7 +19,6 @@ const iconMap: Record<string, LucideIcon> = {
   users: Users,
   zap: Zap,
   trophy: Trophy,
-  chess: Chess,
   text: Text,
 };
 
