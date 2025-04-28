@@ -81,7 +81,7 @@ export const gameCategories = [
   { id: "arcade", name: "Arcade", count: 38, icon: "play-circle", color: "pink" },
   { id: "action", name: "Action", count: 35, icon: "flame", color: "red" },
   { id: "sports", name: "Sports", count: 25, icon: "trophy", color: "cyan" },
-  { id: "strategy", name: "Strategy", count: 28, icon: "chess", color: "orange" },
+  { id: "strategy", name: "Strategy", count: 28, icon: "trophy", color: "orange" },
   { id: "word", name: "Word Games", count: 30, icon: "text", color: "purple" }
 ];
 
