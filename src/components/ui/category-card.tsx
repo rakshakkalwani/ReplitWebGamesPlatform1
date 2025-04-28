@@ -17,6 +17,8 @@ const iconMap: Record<string, LucideIcon> = {
   flame: Flame,
   users: Users,
   zap: Zap,
+  trophy: Trophy,
+  chess: ChessKnight,
 };
 
 const colorMap: Record<string, string> = {
