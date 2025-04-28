@@ -79,10 +79,7 @@ export type InsertGameHistory = z.infer<typeof insertGameHistorySchema>;
 export const gameCategories = [
   { id: "puzzle", name: "Puzzle", count: 42, icon: "puzzle", color: "indigo" },
   { id: "arcade", name: "Arcade", count: 38, icon: "play-circle", color: "pink" },
-  { id: "adventure", name: "Adventure", count: 29, icon: "globe", color: "emerald" },
   { id: "action", name: "Action", count: 35, icon: "flame", color: "red" },
-  { id: "multiplayer", name: "Multiplayer", count: 27, icon: "users", color: "violet" },
-  { id: "fast-paced", name: "Fast-Paced", count: 31, icon: "zap", color: "amber" },
   { id: "sports", name: "Sports", count: 25, icon: "trophy", color: "cyan" },
   { id: "strategy", name: "Strategy", count: 28, icon: "chess", color: "orange" }
 ];
