@@ -678,9 +678,9 @@
   },
   {
     "title": "RUIN",
-    "description": "Challenge yourself with this entertaining adventure game and test your skills!",
-    "category": "educational",
-    "secondaryCategory": "action",
+    "description": "Match 3 or more boxes to clear the grid. 100 exciting levels",
+    "category": "puzzle",
+    "secondaryCategory": "Age 5+",
     "thumbnailUrl": "/games/RUIN/HTML5/icons/icon-256.png",
     "isFeatured": false,
     "isNew": false,
