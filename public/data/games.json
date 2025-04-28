@@ -665,9 +665,9 @@
   },
   {
     "title": "Puzzle Color",
-    "description": "Challenge yourself with this challenging board game and test your skills!",
+    "description": "Stack boxes along the same colored edge. 50 fun levels!",
     "category": "puzzle",
-    "secondaryCategory": "sports",
+    "secondaryCategory": "Age 5+",
     "thumbnailUrl": "/games/PuzzleColor/HTML5/icons/icon-256.png",
     "isFeatured": false,
     "isNew": false,
