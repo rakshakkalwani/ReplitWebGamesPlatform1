@@ -76,6 +76,25 @@ export async function getGame(id: number): Promise<Game> {
   return game;
 }
 
+export async function getSimilarGames(gameId: number, limit: number = 3): Promise<Game[]> {
+  const game = await getGame(gameId);
+  if (!game || !game.category) return [];
+  
+  const allGames = await getFilteredGames();
+  
+  // Get games from the same category, excluding the current game
+  const sameCategory = allGames.filter(g => 
+    g.id !== gameId && 
+    g.category === game.category
+  );
+  
+  // Shuffle the array to get random games each time
+  const shuffled = [...sameCategory].sort(() => 0.5 - Math.random());
+  
+  // Return the specified number of games
+  return shuffled.slice(0, limit);
+}
+
 export async function getGameComments(gameId: number): Promise<Comment[]> {
   try {
     return await loadStaticData<Comment[]>(`comments/${gameId}.json`);

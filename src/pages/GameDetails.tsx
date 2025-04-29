@@ -16,7 +16,7 @@ import { Badge } from "../components/ui/badge";
 import { useToast } from "../hooks/use-toast";
 import { motion, AnimatePresence } from "framer-motion";
 import { Skeleton } from "../components/ui/skeleton";
-import { recordGamePlay } from "../lib/staticData";
+import { recordGamePlay, getSimilarGames } from "../lib/staticData";
 import TutorialButton from "../components/tutorial/TutorialButton";
 
 // Helper function to determine game path based on the game title
@@ -60,6 +60,16 @@ export default function GameDetails() {
   } = useQuery<Game>({
     queryKey: [`/api/games/${gameId}`],
     enabled: !isNaN(gameId)
+  });
+  
+  // Fetch similar games
+  const {
+    data: similarGames,
+    isLoading: similarGamesLoading
+  } = useQuery<Game[]>({
+    queryKey: [`/api/games/${gameId}/similar`],
+    queryFn: () => getSimilarGames(gameId, 3),
+    enabled: !isNaN(gameId) && !!game
   });
 
   // Set page title
@@ -339,7 +349,7 @@ export default function GameDetails() {
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold mb-4">Similar Games</h3>
                   
-                  {gameLoading ? (
+                  {gameLoading || similarGamesLoading ? (
                     <div className="space-y-4">
                       {Array(3).fill(0).map((_, i) => (
                         <div key={`similar-skeleton-${i}`} className="flex items-center space-x-3">
@@ -353,8 +363,36 @@ export default function GameDetails() {
                     </div>
                   ) : (
                     <div className="space-y-4">
+                      {/* Similar games list */}
+                      {similarGames && similarGames.length > 0 ? (
+                        <>
+                          {similarGames.map((similarGame) => (
+                            <Link href={`/games/${similarGame.id}`} key={similarGame.id}>
+                              <div className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                                <img 
+                                  src={similarGame.thumbnailUrl} 
+                                  alt={similarGame.title} 
+                                  className="h-16 w-24 object-cover rounded-md"
+                                />
+                                <div>
+                                  <p className="font-medium">{similarGame.title}</p>
+                                  <p className="text-sm text-gray-600 dark:text-gray-400 capitalize">
+                                    {similarGame.category}
+                                  </p>
+                                </div>
+                              </div>
+                            </Link>
+                          ))}
+                        </>
+                      ) : (
+                        <p className="text-gray-600 dark:text-gray-400">
+                          No similar games found.
+                        </p>
+                      )}
+                      
+                      {/* Link to category */}
                       {game?.category && (
-                        <div className="flex items-center space-x-3">
+                        <div className="flex items-center space-x-3 mt-4 pt-4 border-t border-gray-200 dark:border-gray-800">
                           <ThumbsUp className="h-10 w-10 p-2 bg-indigo-100 dark:bg-indigo-900 rounded-md text-indigo-600 dark:text-indigo-400" />
                           <div>
                             <p className="font-medium">Check out more games</p>
